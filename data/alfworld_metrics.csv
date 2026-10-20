@@ -1,0 +1,4 @@
+method,tasks,successes,success_rate,total_decisions,mean_decisions_all50,median_decisions_all50,common_success_count,mean_decisions_common_success,invalid_actions,length_limited,prompt_tokens,completion_tokens,total_tokens,invalid_action_rate,common_prompt_tokens,common_completion_tokens,common_total_tokens
+no_memory,50,47,0.94,1015,20.3,16.0,47,18.404255319148938,100,0,3911429,37874,3949303,0.09852216748768473,2980740,27963,3008703
+similarity_only,50,50,1.0,788,15.76,11.5,47,14.808510638297872,36,0,2918741,21212,2939953,0.04568527918781726,2518271,17883,2536154
+memrl_frozen_memory,50,49,0.98,693,13.86,10.5,47,12.659574468085106,26,0,2516744,22611,2539355,0.03751803751803752,1975676,16183,1991859

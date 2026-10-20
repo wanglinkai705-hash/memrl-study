@@ -1,0 +1,3 @@
+method,tasks,correct,success_rate,truncated,unparsed,prompt_tokens,completion_tokens,total_tokens
+no_memory,50,39,0.78,2,2,7799,144868,152667
+memrl_frozen_memory,50,40,0.8,6,6,49645,170239,219884

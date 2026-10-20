@@ -1,0 +1,130 @@
+{
+  "verified_source_files": 134,
+  "alfworld": [
+    {
+      "method": "no_memory",
+      "tasks": 50,
+      "successes": 47,
+      "success_rate": 0.94,
+      "total_decisions": 1015,
+      "mean_decisions_all50": 20.3,
+      "median_decisions_all50": 16.0,
+      "common_success_count": 47,
+      "mean_decisions_common_success": 18.404255319148938,
+      "invalid_actions": 100,
+      "length_limited": 0,
+      "prompt_tokens": 3911429,
+      "completion_tokens": 37874,
+      "total_tokens": 3949303,
+      "invalid_action_rate": 0.09852216748768473,
+      "common_prompt_tokens": 2980740,
+      "common_completion_tokens": 27963,
+      "common_total_tokens": 3008703
+    },
+    {
+      "method": "similarity_only",
+      "tasks": 50,
+      "successes": 50,
+      "success_rate": 1.0,
+      "total_decisions": 788,
+      "mean_decisions_all50": 15.76,
+      "median_decisions_all50": 11.5,
+      "common_success_count": 47,
+      "mean_decisions_common_success": 14.808510638297872,
+      "invalid_actions": 36,
+      "length_limited": 0,
+      "prompt_tokens": 2918741,
+      "completion_tokens": 21212,
+      "total_tokens": 2939953,
+      "invalid_action_rate": 0.04568527918781726,
+      "common_prompt_tokens": 2518271,
+      "common_completion_tokens": 17883,
+      "common_total_tokens": 2536154
+    },
+    {
+      "method": "memrl_frozen_memory",
+      "tasks": 50,
+      "successes": 49,
+      "success_rate": 0.98,
+      "total_decisions": 693,
+      "mean_decisions_all50": 13.86,
+      "median_decisions_all50": 10.5,
+      "common_success_count": 47,
+      "mean_decisions_common_success": 12.659574468085106,
+      "invalid_actions": 26,
+      "length_limited": 0,
+      "prompt_tokens": 2516744,
+      "completion_tokens": 22611,
+      "total_tokens": 2539355,
+      "invalid_action_rate": 0.03751803751803752,
+      "common_prompt_tokens": 1975676,
+      "common_completion_tokens": 16183,
+      "common_total_tokens": 1991859
+    }
+  ],
+  "harp": [
+    {
+      "method": "no_memory",
+      "tasks": 50,
+      "correct": 39,
+      "success_rate": 0.78,
+      "truncated": 2,
+      "unparsed": 2,
+      "prompt_tokens": 7799,
+      "completion_tokens": 144868,
+      "total_tokens": 152667
+    },
+    {
+      "method": "memrl_frozen_memory",
+      "tasks": 50,
+      "correct": 40,
+      "success_rate": 0.8,
+      "truncated": 6,
+      "unparsed": 6,
+      "prompt_tokens": 49645,
+      "completion_tokens": 170239,
+      "total_tokens": 219884
+    }
+  ],
+  "harp_pairs": {
+    "both_correct": 35,
+    "correct_to_wrong": 4,
+    "both_wrong": 6,
+    "wrong_to_correct": 5
+  },
+  "training": {
+    "alfworld": {
+      "tasks": 100,
+      "successes": 98,
+      "memories": 100,
+      "q_updates": 270,
+      "zero_visits": 54,
+      "q_median": 0.0
+    },
+    "harp": {
+      "tasks": 50,
+      "successes": 38,
+      "memories": 50,
+      "q_updates": 144,
+      "zero_visits": 14,
+      "q_median": 0.915965
+    }
+  },
+  "gsm8k": {
+    "completed": 94,
+    "correct": 92,
+    "status": "exploration_closed"
+  },
+  "retrieval": {
+    "set_changed": 33,
+    "order_changed": 42,
+    "context_changed": 42,
+    "ranking_checks": 100,
+    "max_score_reconstruction_error": 8.333332646159874e-08
+  },
+  "alfworld_split_id_overlaps": {
+    "train100": 0,
+    "eval50": 0,
+    "dev3": 0
+  }
+}

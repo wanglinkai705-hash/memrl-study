@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="900" height="480" preserveAspectRatio="xMinYMin meet" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="900" height="480"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-480)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="900" height="480" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="34" y="446" style="font-family: Helvetica-Bold; font-size: 21px;fill: rgb(9%,16%,23%); stroke:none;" transform="translate(0,892) scale(1,-1)">ALFWorld | Mean decision count</text>
+			<text x="34" y="422" style="font-family: Helvetica; font-size: 11px;fill: rgb(29%,36%,42%); stroke:none;" transform="translate(0,844) scale(1,-1)">47 tasks per method | Lower is better</text>
+			<text x="34" y="389" style="font-family: Helvetica; font-size: 10px;fill: rgb(29%,36%,42%); stroke:none;" transform="translate(0,778) scale(1,-1)">Decisions / task</text>
+			<g transform="">
+				<path d="M 70,112 L 865,112 Z" style="stroke: rgb(88%,90%,94%); stroke-linecap: butt; stroke-width: 0.25;"/>
+				<path d="M 70,163 L 865,163 Z" style="stroke: rgb(88%,90%,94%); stroke-linecap: butt; stroke-width: 0.25;"/>
+				<path d="M 70,214 L 865,214 Z" style="stroke: rgb(88%,90%,94%); stroke-linecap: butt; stroke-width: 0.25;"/>
+				<path d="M 70,265 L 865,265 Z" style="stroke: rgb(88%,90%,94%); stroke-linecap: butt; stroke-width: 0.25;"/>
+				<path d="M 70,316 L 865,316 Z" style="stroke: rgb(88%,90%,94%); stroke-linecap: butt; stroke-width: 0.25;"/>
+				<path d="M 70,367 L 865,367 Z" style="stroke: rgb(88%,90%,94%); stroke-linecap: butt; stroke-width: 0.25;"/>
+				<g transform="">
+					<rect x="120.96153846153845" y="112.0" width="163.0769230769231" height="187.7234042553191" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(39%,45%,54%); fill-rule: evenodd;"/>
+					<rect x="385.96153846153845" y="112.0" width="163.0769230769231" height="151.04680851063824" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(81%,54%,19%); fill-rule: evenodd;"/>
+					<rect x="650.9615384615385" y="112.0" width="163.0769230769231" height="129.12765957446808" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,52%,47%); fill-rule: evenodd;"/>
+					<g transform=""/>
+				</g>
+				<g transform="">
+					<g transform="">
+						<path d="M 70,112 L 865,112 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<path d="M 70,112 L 70,107 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 335,112 L 335,107 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 600,112 L 600,107 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 865,112 L 865,107 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,202.5,103)">
+							<text x="-31.002" y="-12.0" style="font-family: Helvetica; font-size: 12px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-24) scale(1,-1)">No Memory</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,467.5,103)">
+							<text x="-37.332" y="-12.0" style="font-family: Helvetica; font-size: 12px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-24) scale(1,-1)">Similarity-only</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,732.5,103)">
+							<text x="-43.338" y="-12.0" style="font-family: Helvetica; font-size: 12px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-24) scale(1,-1)">MemRL (frozen)</text>
+						</g>
+					</g>
+				</g>
+				<g transform="">
+					<g transform="">
+						<path d="M 70,112 L 70,367 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<path d="M 70,112 L 65,112 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 70,163 L 65,163 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 70,214 L 65,214 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 70,265 L 65,265 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 70,316 L 65,316 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 70,367 L 65,367 Z" style="stroke: rgb(79%,83%,88%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,65,112)">
+							<text x="-5.5600000000000005" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">0</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,65,163)">
+							<text x="-5.5600000000000005" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">5</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,65,214)">
+							<text x="-11.120000000000001" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">10</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,65,265)">
+							<text x="-11.120000000000001" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">15</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,65,316)">
+							<text x="-11.120000000000001" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">20</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,65,367)">
+							<text x="-11.120000000000001" y="-4.0" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-8) scale(1,-1)">25</text>
+						</g>
+					</g>
+				</g>
+			</g>
+			<text x="186.237" y="309.72340425531917" style="font-family: Helvetica-Bold; font-size: 13px;fill: rgb(9%,16%,23%); stroke:none;" transform="translate(0,619) scale(1,-1)">18.40</text>
+			<text x="451.237" y="273.0468085106383" style="font-family: Helvetica-Bold; font-size: 13px;fill: rgb(9%,16%,23%); stroke:none;" transform="translate(0,546) scale(1,-1)">14.81</text>
+			<text x="716.237" y="251.12765957446808" style="font-family: Helvetica-Bold; font-size: 13px;fill: rgb(9%,16%,23%); stroke:none;" transform="translate(0,502) scale(1,-1)">12.66</text>
+			<text x="34" y="65" style="font-family: Helvetica; font-size: 10px;fill: rgb(29%,36%,42%); stroke:none;" transform="translate(0,130) scale(1,-1)">Only the same 47 tasks completed successfully by all three methods.</text>
+			<text x="34" y="49" style="font-family: Helvetica; font-size: 10px;fill: rgb(29%,36%,42%); stroke:none;" transform="translate(0,98) scale(1,-1)">Single run; custom subset. Descriptive results, not multi-seed estimates.</text>
+			<text x="34" y="33" style="font-family: Helvetica; font-size: 10px;fill: rgb(29%,36%,42%); stroke:none;" transform="translate(0,66) scale(1,-1)">Source: audited per-task CSVs; see scripts/recompute.py and data/source_hashes.csv.</text>
+		</g>
+	</g>
+</svg>

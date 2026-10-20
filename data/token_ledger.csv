@@ -1,0 +1,13 @@
+benchmark,stage,method,service,provenance,requests_started,prompt_tokens,completion_tokens,total_tokens
+alfworld,evaluation,initialization,embedding,summary_only,1,15,0,15
+alfworld,evaluation,memrl_frozen_memory,embedding,summary_only,50,594,0,594
+alfworld,evaluation,memrl_frozen_memory,solver,summary_crosschecked_solver_steps,693,2516744,22611,2539355
+alfworld,evaluation,no_memory,solver,summary_crosschecked_solver_steps,1015,3911429,37874,3949303
+alfworld,evaluation,similarity_only,embedding,summary_only,50,594,0,594
+alfworld,evaluation,similarity_only,solver,summary_crosschecked_solver_steps,788,2918741,21212,2939953
+alfworld,training,shared_bank,embedding,summary_only,458,5229,0,5229
+alfworld,training,shared_bank,memory,summary_only,100,125221,21662,146883
+alfworld,training,shared_bank,solver,summary_only,1324,5627592,35680,5663272
+harp,training,memrl,solver,per_training_answer,50,47972,160723,208695
+harp,evaluation,no_memory,solver,per_answer,50,7799,144868,152667
+harp,evaluation,memrl_frozen_memory,solver,per_answer,50,49645,170239,219884
