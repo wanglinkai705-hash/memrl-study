@@ -27,8 +27,12 @@ ALFWorld's 98/100 training successes are not a test score.
 
 ## Reading the results
 
-- **Math accuracy:** checked using a fixed final-answer rule. Cut-off answers stayed in the results.
-- **Agent success:** determined by the environment's `won` flag.
+I use the [paper's metric name](https://arxiv.org/html/2601.03192v2#S5.SS1), **Success Rate (SR)**: successful tasks divided by all evaluated tasks, shown as a percentage. Each method's denominator is 50 in both final tests.
+
+This is a single frozen evaluation, closest in structure to the paper's transfer setting. The paper also reports Last Epoch SR and Cumulative Success Rate (CSR) over 10 runtime-learning epochs. This study does not repeat that setup, so those metrics are not reported here.
+
+- **HARP/AIME SR:** success means a correct final answer under the fixed answer-checking rule. Cut-off answers stayed in the denominator.
+- **ALFWorld SR:** success is determined by the environment's `won` flag. Failed tasks stayed in the denominator.
 - **Decisions:** include invalid actions and actions that made no progress.
 - **Same 47 successful tasks:** the identical tasks completed by all three methods. This comparison reduces the influence of failures reaching the step limit; it still needs to be read alongside overall success rates.
 - **Tokens:** input plus output for generating answers/actions. Training and Embedding are separate in `data/token_ledger.csv`; some totals are summary-only, and complete HARP costs are unavailable.
@@ -41,7 +45,7 @@ There were counterexamples: MemRL failed a cloth-cleaning task at 50 decisions w
 
 This is one run on small subsets. Longer ALFWorld tasks still produced high baseline success, and only four layouts were covered. The effect of legal-action lists was not separately tested. HARP has no similarity-only comparison, so it cannot show the extra value of Q scores.
 
-Repeated comparisons and closer study of failures are useful next steps. The [original paper](https://arxiv.org/html/2601.03192v2) uses different models, scale, and training schedules; local scores should not be expected to match it.
+Repeated comparisons and closer study of failures are useful next steps. The [original paper](https://arxiv.org/html/2601.03192v2) uses GPT-5-mini for ALFWorld and evaluates transfer on 140 `valid_seen` tasks; this study uses DeepSeek-flash and 50 selected `valid_unseen` tasks. Models, scale, and training schedules differ, so local scores should not be expected to match the paper.
 
 ## Recreate the charts
 

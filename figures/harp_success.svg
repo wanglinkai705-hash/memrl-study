@@ -11,9 +11,9 @@
 	<g id="group" transform="scale(1,-1) translate(0,-480)" style="clip-path: url(#clip)">
 		<g transform="">
 			<rect x="0" y="0" width="900" height="480" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
-			<text x="34" y="446" style="font-family: Helvetica-Bold; font-size: 21px;fill: rgb(9%,16%,23%); stroke:none;" transform="translate(0,892) scale(1,-1)">HARP / AIME | Final confirmation</text>
-			<text x="34" y="422" style="font-family: Helvetica; font-size: 11px;fill: rgb(29%,36%,42%); stroke:none;" transform="translate(0,844) scale(1,-1)">Math answer accuracy | 50 fixed questions per arm; 100 answers</text>
-			<text x="34" y="389" style="font-family: Helvetica; font-size: 10px;fill: rgb(29%,36%,42%); stroke:none;" transform="translate(0,778) scale(1,-1)">Correct answers (%)</text>
+			<text x="34" y="446" style="font-family: Helvetica-Bold; font-size: 21px;fill: rgb(9%,16%,23%); stroke:none;" transform="translate(0,892) scale(1,-1)">HARP / AIME | Success Rate (SR)</text>
+			<text x="34" y="422" style="font-family: Helvetica; font-size: 11px;fill: rgb(29%,36%,42%); stroke:none;" transform="translate(0,844) scale(1,-1)">Success = correct final answer | 50 fixed questions per arm; 100 answers</text>
+			<text x="34" y="389" style="font-family: Helvetica; font-size: 10px;fill: rgb(29%,36%,42%); stroke:none;" transform="translate(0,778) scale(1,-1)">Success Rate (SR, %)</text>
 			<g transform="">
 				<path d="M 70,112 L 865,112 Z" style="stroke: rgb(88%,90%,94%); stroke-linecap: butt; stroke-width: 0.25;"/>
 				<path d="M 70,158.363636 L 865,158.363636 Z" style="stroke: rgb(88%,90%,94%); stroke-linecap: butt; stroke-width: 0.25;"/>

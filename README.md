@@ -12,13 +12,13 @@ Throughout these changes, I kept training and test tasks separate, compared meth
 
 ## Results so far
 
-The experiments used **DeepSeek-flash** and **BGE-M3**. These are results from one run on small, selected subsets.
+The experiments used **DeepSeek-flash** and **BGE-M3**. These are results from one run on small, selected subsets. Following the paper's terminology, **Success Rate (SR)** is successful tasks divided by all test tasks, shown as a percentage.
 
 ### HARP / AIME: math problems
 
-Memory was built using 50 training problems. Testing used a fresh set of 50 problems.
+Memory was built using 50 training problems. Testing used a fresh set of 50 problems. A correct final answer counts as success.
 
-| Method | Correct | Accuracy |
+| Method | Successful tasks | Success Rate (SR) |
 |---|---:|---:|
 | No Memory | 39/50 | 78% |
 | MemRL | 40/50 | 80% |
@@ -29,9 +29,9 @@ Compared with No Memory, 5 answers changed from wrong to correct and 4 changed f
 
 ### ALFWorld: interactive tasks
 
-After one training pass over 100 tasks, I compared three methods on the same 50 unseen tasks.
+After one training pass over 100 tasks, I compared three methods on the same 50 unseen tasks. Success is determined by the environment's `won` flag.
 
-| Method | Success | Mean decisions: all 50 | Mean decisions: same 47 successful tasks |
+| Method | Success Rate (SR) | Mean decisions: all 50 | Mean decisions: same 47 successful tasks |
 |---|---:|---:|---:|
 | No Memory | 47/50 (94%) | 20.30 | 18.40 |
 | Similarity-based memory | 50/50 (100%) | 15.76 | 14.81 |
