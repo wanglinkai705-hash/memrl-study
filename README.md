@@ -1,6 +1,6 @@
 # MemRL Study
 
-A small undergraduate research project on how memory affects AI agents. I started studying [MemRL](https://github.com/MemTensor/MemRL) on the recommendation of **Waqar Ali at Wenzhou-Kean University (WKU)**.
+A small undergraduate research project on how memory affects AI agents. I started studying [MemRL](https://github.com/MemTensor/MemRL) on the recommendation of **Waqar Ali, Associate Professor in CSMT at Wenzhou-Kean University (WKU)**.
 
 ## How the project developed
 
