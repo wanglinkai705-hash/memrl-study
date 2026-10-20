@@ -1,67 +1,62 @@
 # MemRL Study
 
-A small research update adapting [MemRL](https://github.com/MemTensor/MemRL) to **DeepSeek-flash + BGE-M3**, with separate experiments on math reasoning and interactive agents.
+A small undergraduate research project on how memory affects AI agents. I started studying [MemRL](https://github.com/MemTensor/MemRL) on the recommendation of **Waqar Ali at Wenzhou-Kean University (WKU)**.
 
-**Finding:** MemRL used fewer ALFWorld decisions and solver tokens in this run, but did not outperform similarity-only retrieval on success rate. The math result was a small net gain with higher token usage.
+## How the project developed
 
-## HARP / AIME: math reasoning
+- **Starting with GSM8K:** the model answered 92 of 94 questions correctly without memory. This left little room to measure improvement, a problem known as the *ceiling effect*.
+- **Moving to HARP/AIME:** after checking difficulty, I selected Level 6 problems. I worked through issues with reading final answers, responses reaching the output limit, and memory text making prompts too long.
+- **Trying ALFWorld:** I extended the study to an environment where an agent takes actions to complete tasks. I selected a fixed set of multi-stage tasks from unseen scenes, using longer reference action sequences to try to increase complexity.
 
-Trained on 50 problems with compact memory, then compared two methods on a **fresh fixed set of 50 problems** (100 answers). Memory and Q values were frozen during evaluation.
+Throughout these changes, I kept training and test tasks separate, compared methods on the same test tasks, and kept memory unchanged during testing.
 
-| Method | Correct | Accuracy | Truncated outputs | Solver tokens |
-|---|---:|---:|---:|---:|
-| No Memory | 39/50 | 78% | 2 | 152,667 |
-| MemRL | 40/50 | 80% | 6 | 219,884 |
+## Results so far
 
-Paired results: **35 both correct, 6 both wrong, 5 improved, 4 regressed**. Net gain: one question (+2 percentage points); total solver tokens increased by 44.0%. Output cap: 8,192 tokens per answer. Truncated answers remain in the denominator.
+The experiments used **DeepSeek-flash** and **BGE-M3**. These are results from one run on small, selected subsets.
 
-![HARP paired results](figures/harp_paired.svg)
+### HARP / AIME: math problems
 
-## ALFWorld: interactive agents
+Memory was built using 50 training problems. Testing used a fresh set of 50 problems.
 
-One training pass over 100 tasks produced 100 memories and 270 Q updates (98 training successes, **not** a held-out score). Frozen evaluation used the same **50 custom `valid_unseen` tasks** for all three methods; success comes from the environment's `won` flag.
+| Method | Correct | Accuracy |
+|---|---:|---:|
+| No Memory | 39/50 | 78% |
+| MemRL | 40/50 | 80% |
 
-| Method | Success | Mean decisions: all 50 | Mean decisions: common-success 47 | Solver tokens |
-|---|---:|---:|---:|---:|
-| No Memory | 47/50 (94%) | 20.30 | 18.40 | 3,949,303 |
-| Similarity-only | 50/50 (100%) | 15.76 | 14.81 | 2,939,953 |
-| MemRL | 49/50 (98%) | 13.86 | 12.66 | 2,539,355 |
+Compared with No Memory, 5 answers changed from wrong to correct and 4 changed from correct to wrong: a net gain of **one question**. Responses reached the 8,192-token output limit 2 times without memory and 6 times with MemRL. All 50 questions remain in the results.
 
-On the same 47 tasks successful in every method, MemRL used **31.2% fewer decisions than No Memory and 14.5% fewer than similarity-only**. Across all 50 tasks, total solver tokens were 35.7% and 13.6% lower, respectively. Tokens exclude training and Embedding; they are not monetary costs.
+![Math results](figures/harp_paired.svg)
 
-Both retrieval methods share the **same MemRL-trained memory bank**. All methods receive the full legal-action list, with a maximum of 50 decisions per task and 4,096 output tokens per decision. No API errors or output truncations were recorded.
+### ALFWorld: interactive tasks
+
+After one training pass over 100 tasks, I compared three methods on the same 50 unseen tasks.
+
+| Method | Success | Mean decisions: all 50 | Mean decisions: same 47 successful tasks |
+|---|---:|---:|---:|
+| No Memory | 47/50 (94%) | 20.30 | 18.40 |
+| Similarity-based memory | 50/50 (100%) | 15.76 | 14.81 |
+| MemRL | 49/50 (98%) | 13.86 | 12.66 |
+
+The last column compares only tasks that **all three methods completed**. MemRL used fewer decisions on average, but its success rate was slightly lower than similarity-based memory. Both memory methods used the same trained memory bank.
 
 ![ALFWorld success](figures/alfworld_success.svg)
-![ALFWorld common-success decisions](figures/alfworld_steps_common47.svg)
+![Decisions on the same successful tasks](figures/alfworld_steps_common47.svg)
 
-## Work completed
+## What I learned
 
-- DeepSeek/BGE-M3 adaptation and compact memory presentation.
-- Frozen evaluation, resume support, request logging and source hashes.
-- Offline checks of 100 math answers, 150 agent episodes and 2,496 decisions.
-- Replayed 414 scalar Q updates and reconstructed all 100 retrieval-arm rankings. Retrieval sets differed on 33/50 ALFWorld tasks; this verifies mechanism differences, not causal benefit.
+Choosing harder or longer tasks does not necessarily remove the ceiling effect. Success rate alone can also miss useful differences. Looking at decision counts, token use, and failed task sequences helped me understand where memory might help and where it can cause problems.
 
-## Reproduce this report
+For example, ALFWorld MemRL used 13.6% fewer answer-generation tokens than similarity-based memory, while HARP MemRL used 44.0% more than No Memory. These counts exclude training and Embedding.
 
-Numerical CSVs and all six charts are included. Regenerate SVG figures without model/API requests:
+These observations need repeated experiments. ALFWorld covers only four room layouts, and all methods received legal-action lists. This is an early adaptation study, with settings different from the original paper.
 
-```bash
-python -m pip install -r requirements-analysis.txt
-python scripts/plot.py --data data --out figures
-```
+## Files and next step
 
-To audit the separately retained original records:
+- `data/`: numerical results and task identifiers.
+- `figures/`: six result charts.
+- `scripts/`: offline result checks and plotting code.
+- [Experiment notes](docs/methods.md): settings, definitions, and instructions for recreating the charts.
 
-```bash
-python scripts/recompute.py --source /path/to/MemRL_stage_handoff_2026-10-20 --out data
-```
+This repository shares the stage report and analysis. The full training setup and raw task records are not included. My next step is to repeat the comparisons and better understand the remaining failures.
 
-This repository contains the **stage report and offline analysis**, not a standalone training package. See [Methods and limitations](docs/methods.md) for settings, provenance and data policy.
-
-## Limitations and next step
-
-Single-run, small custom subsets; ALFWorld covers only four layouts. Some tasks became slower or failed with memory. HARP has no similarity-only arm, so it does not isolate Q ranking. This adaptation is not a full reproduction of the paper's models, scale or multi-epoch metrics.
-
-Next: repeat fixed paired evaluations and test true Q against shuffled Q before making stronger claims. No new experiments were started for this report.
-
-Based on [MemRL](https://arxiv.org/abs/2601.03192); benchmarks: [HARP](https://github.com/aadityasingh/HARP) and [ALFWorld](https://github.com/alfworld/alfworld). Implementation and report preparation used AI assistance. Results reflect the saved experimental records.
+Sources: [MemRL paper](https://arxiv.org/abs/2601.03192) · [HARP](https://github.com/aadityasingh/HARP) · [ALFWorld](https://github.com/alfworld/alfworld). Coding and report preparation used AI assistance.
